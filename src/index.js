@@ -1,6 +1,11 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const { app, autoUpdater } = require('electron')
 
+const server = 'http://localhost:3000'
+const feed = `${server}/update/${process.platform}/${app.getVersion()}`
+
+autoUpdater.setFeedURL(feed)
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
