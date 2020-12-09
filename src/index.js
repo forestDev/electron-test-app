@@ -1,6 +1,5 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, autoUpdater } = require('electron');
 const path = require('path');
-const { app, autoUpdater } = require('electron')
 
 const server = 'http://localhost:3000'
 const feed = `${server}/update/${process.platform}/${app.getVersion()}`
